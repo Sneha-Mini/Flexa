@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            background-color: #FFFFFF;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Define header styles */
+        header {
+            background-color: #C4C8FC;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Style the logo image */
+        .headerlogo {
+            max-width: 150px; /* Adjust the width as needed */
+            height: auto;
+        }
+		
+		
+        .container {
+			display: flex;
+			flex-direction: column; /* Stack columns in mobile view */
+			align-items: center; /* Center content vertically */
+			padding: 20px;
+			max-width: 100%; /* Set a maximum width for the container */
+			margin: 0 auto; 
+		}
+
+        .left-side {
+            width: 100%; /* Full width in mobile view */
+            max-width: 400px; /* Limit width in larger screens */
+        }
+
+        .right-side {
+            width: 100%; /* Full width in mobile view */
+            max-width: 400px; /* Limit width in larger screens */
+        }
+
+        .form-container {
+            padding: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-input {
+			width: 100%;
+			max-width: 250px; /* Adjust the max-width to control the input field size */
+			padding: 10px;
+			margin-bottom: 10px;
+			border: none;
+			border-radius: 25px;
+			background-color: #C4C8FC; /* Input field color */
+		}
+
+        .radio-label {
+            margin-right: 10px;
+        }
+
+        .calculate-button {
+            background-color: #C4C8FC;
+            color: black;
+			font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Media query for responsiveness */
+        @media screen and (min-width: 768px) {
+             .container {
+				flex-direction: row; /* Display columns side by side in larger screens */
+				justify-content: space-between; /* Space between columns */
+				align-items: flex-start; /* Align content to the top in larger screens */
+				max-width: 70%; /* Adjust the max-width for larger screens */
+				}
+
+            .left-side {
+                width: 40%; /* Adjust the left column width as needed */
+                max-width: none; /* Remove max-width constraint */
+            }
+
+            .right-side {
+                width: 60%; /* Adjust the right column width as needed */
+                max-width: none; /* Remove max-width constraint */
+            }
+        }
+
+
+        /* Footer styles */
+        footer {
+            background-color: #C4C8FC;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Style the logo image in the footer */
+        .logo {
+            max-width: 200px; /* Adjust the width as needed */
+            height: auto;
+        }
+
+        /* Style the text below the logo in the footer */
+         .footer-text {
+            max-width: 800px;
+        }
+
+        /* Style the row of images in the footer */
+        .image-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-row img {
+            max-width: 24px; /* Adjust the image size as needed */
+            margin: 10px 10px; /* Adjust the margin between images */
+        }
+
+        /* Style the bottom div with copyright text in the footer */
+        .bottom-div {
+            background-color: #5F5BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Logo image on the left side -->
+        <img src="image/logo.png" alt="Logo" class="headerlogo">
+       
+    </header>
+
+    <!-- MAIN PAGE -->
+	
+	<div class="container">
+        <div class="left-side">
+            <div class="form-container">
+                <h2>BMI CALCULATOR</h2>
+                <label class="form-label" for="height">Height (cm):</label> </br></br>
+                <input class="form-input" type="number" id="height" placeholder="Enter Height" required> </br>
+                <label class="form-label" for="weight">Weight (kg):</label></br></br>
+                <input class="form-input" type="number" id="weight" placeholder="Enter Weight" required></br>
+                <label class="form-label" for="age">Age:</label></br></br>
+                <input class="form-input" type="number" id="age" placeholder="Enter Age" required></br>
+                <label class="form-label">Sex:</label></br></br>
+				<input type="radio" id="male" name="sex" value="male" required>
+                <label class="radio-label" for="male">Male</label></br>
+                <input type="radio" id="female" name="sex" value="female" required>
+                <label class="radio-label" for="female">Female</label></br></br>
+                <button class="calculate-button" onclick="calculateBMI()">Calculate</button></br></br>
+				 <div id="bmi-result" class="bmi-result"></div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="image-container">
+                <img src="image/bmi.jpg" alt="BMI Calculator Image">
+            </div>
+        </div>
+    </div>
+
+    
+    <footer>
+        <div class="footer-content">
+            <!-- Top div with content -->
+            <img src="image/logo.png" alt="Logo" class="logo">
+            <div class="footer-text">
+                <p>Discover tailored workouts for your fitness goals. Whether you aim to shed pounds or gain muscle, our BMI-based recommendations guide your journey to a healthier you.</p>
+            </div>
+            <div class="image-row">
+                <img src="image/facebook.png" alt="Image 1">
+                <img src="image/twitter.png" alt="Image 2">
+                <img src="image/instagram.png" alt="Image 3">
+                <img src="image/youtube.png" alt="Image 4">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom div with copyright text -->
+    <div class="bottom-div">
+        <p>Copyright &copy; 2023 <span class="logo">LOGO</span></p>
+    </div>
+	
+	 <script>
+        function calculateBMI() {
+			const height = parseFloat(document.getElementById("height").value);
+			const weight = parseFloat(document.getElementById("weight").value);
+			const bmi = weight / ((height / 100) * (height / 100));
+			
+
+			let status;
+			let buttonText;
+			let motivationQuote;
+			let redirectURL;
+
+			if (bmi < 18.5) {
+				status = "Underweight";
+				buttonText = "Start Gaining →";
+				motivationQuote = "Your health is your wealth. It's time to build a stronger you.";
+				redirectURL = "Underweight.html";
+			} else if (bmi >= 18.5 && bmi < 24.9) {
+				status = "Normal Weight";
+				buttonText = "Start Workout →";
+				motivationQuote = "Stay committed to your fitness journey. Hard work pays off.";
+				redirectURL = "Fit.html";
+			} else {
+				status = "Overweight";
+				buttonText = "Lose Now →";
+				motivationQuote = "Take the first step towards a healthier you. You've got this!";
+				redirectURL = "Overweight.html";
+			}
+
+			const resultMessage = `Your BMI is ${bmi.toFixed(2)}, which falls into the category of ${status}.`;
+			const quoteMessage = ` "${motivationQuote}"`;
+
+			// Display the BMI result and corresponding button
+			const bmiResult = document.getElementById("bmi-result");
+			bmiResult.innerHTML = `${resultMessage}<br>${quoteMessage}`;
+
+			// Create a div to wrap the button and place it on the next line
+			const buttonDiv = document.createElement("div");
+			const button = document.createElement("button");
+			button.textContent = buttonText;
+			button.classList.add("calculate-button");
+			button.style.marginTop = "20px";
+			 button.addEventListener("click", () => {
+				window.location.href = redirectURL;
+			});
+			buttonDiv.appendChild(button);
+
+			bmiResult.appendChild(buttonDiv);
+		}
+
+    </script>
+	
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Two-Column Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+		/* General styles */
+        body {
+            margin: 0;
+            background-color: #FFFFFF;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Define header styles */
+        header {
+            background-color: #C4C8FC;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Style the logo image */
+        .headerlogo {
+            max-width: 150px; /* Adjust the width as needed */
+            height: auto;
+        }
+		.heading {
+            font-size: 24px;
+            font-weight: bold;
+			max-width: 1000px;
+            margin: 0px auto;
+			margin-top:20px;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-div {
+			display: grid;
+			grid-template-columns: 40% 60%;
+            background-color: #C4C8FC;
+            padding: 10px;
+            border-radius: 25px;
+        }
+
+        .main-div h2 {
+            margin-top: 0;
+			font-size: 24px;
+        }
+
+        .left-content {
+            padding: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center; /* Center content vertically and horizontally */
+			justify-content: center;
+        }
+
+        .right-content {
+			background-color:white;
+			border-radius:25px;
+			height: 200px; /* Set a fixed height for the right content div */
+			overflow: hidden; /* Hide any overflowing content */
+			display: flex;
+			align-items: center; /* Center the image vertically */
+			justify-content: center; /* Center the image horizontally */
+		}
+
+		.right-content img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain; /* Ensure the image fits inside the div without stretching */
+		}
+		.play-container {
+			display: inline-flex;
+			align-items: center;
+			align-items: center;
+			background-color: #5F5BFF;
+			border-radius: 25px;
+			padding: 0px 15px;
+			color: white;
+		}
+
+		.play-button {
+			background: transparent;
+			border: none;
+			color: white;
+			font-size: 24px;
+		}
+		.play-button.hidden {
+            display: none;
+        }
+
+		.play-text {
+		
+			margin-left: 5px;
+			margin-right:5px;
+		}
+
+        .main-div img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		
+		@media (max-width: 768px) {
+			.container {
+				grid-template-columns: 1fr; /* On smaller screens, make it a single column layout */
+			}
+			.main-div h2 {
+				margin-top: 0;
+				font-size: 20px;
+			}
+		}
+		
+		/* Footer styles */
+        footer {
+            background-color: #C4C8FC;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Style the logo image in the footer */
+        .logo {
+            max-width: 200px; /* Adjust the width as needed */
+            height: auto;
+        }
+
+        /* Style the text below the logo in the footer */
+         .footer-text {
+            max-width: 800px;
+        }
+
+        /* Style the row of images in the footer */
+        .image-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-row img {
+            max-width: 24px; /* Adjust the image size as needed */
+            margin: 10px 10px; /* Adjust the margin between images */
+        }
+
+        /* Style the bottom div with copyright text in the footer */
+        .bottom-div {
+            background-color: #5F5BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+	</style>
+</head>
+<body>
+
+	<header class="header">
+        <!-- Logo image on the left side -->
+        <img src="image/logo.png" alt="Logo" class="headerlogo">
+       
+    </header>
+	
+	<h2 class="heading">EXERCISE</h2>
+    <div class="container">
+        <!-- First Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>Basic-Step-Touch</h2>
+                <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">15 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/Basic-Step-Touch.gif" alt="Basic-Step-Touch">
+            </div>
+        </div>
+
+        <!-- Second Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>Crunches</h2>
+                 <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">10 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/Crunches.gif" alt="Crunches">
+            </div>
+        </div>
+		
+		 <!-- Third Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>Dumbbell Side Bends</h2>
+                <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">15 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/Dumbbell Side Bends.gif" alt="Dumbbell Side Bends">
+            </div>
+        </div>
+
+        <!-- Fourth Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>Front-Jabs</h2>
+                 <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">10 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/Front-Jabs.gif" alt="Front-Jabs">
+            </div>
+        </div>
+		 <!-- Fifth Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>High knee march</h2>
+                <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">10 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/High knee march.gif" alt="High knee march">
+            </div>
+        </div>
+		 <!-- Sixth Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>Jumping-Jacks</h2>
+                <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">5 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/Jumping-Jacks.gif" alt="Jumping-Jacks">
+            </div>
+        </div>
+		 <!-- Seventh Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>Pivot-and-Reach</h2>
+                <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">10 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/Pivot-and-Reach.gif" alt="Pivot-and-Reach">
+            </div>
+        </div>
+		 <!-- Eighth Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>Single Leg squats with toe touch</h2>
+                <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">5 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/Single Leg squats with toe touch.gif" alt="Single Leg squats with toe touch">
+            </div>
+        </div>
+		 <!-- Ninth Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>Squats</h2>
+                <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">10 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/Squats.gif" alt="Squats">
+            </div>
+        </div>
+		 <!-- Tenth Main Div -->
+        <div class="main-div">
+            <div class="left-content">
+                <h2>Uppercuts</h2>
+                <div class="play-container">
+					<button class="play-button" onclick="startCountdown(this)">&#9658</button>
+					<p class="play-text">10 sec</p>
+				</div>
+            </div>
+            <div class="right-content">
+                <img src="Underweight/Uppercuts.gif" alt="Uppercuts">
+            </div>
+        </div>
+    </div>
+	</br></br>
+	
+	<footer>
+        <div class="footer-content">
+            <!-- Top div with content -->
+            <img src="image/logo.png" alt="Logo" class="logo">
+            <div class="footer-text">
+                <p>Discover tailored workouts for your fitness goals. Whether you aim to shed pounds or gain muscle, our BMI-based recommendations guide your journey to a healthier you.</p>
+            </div>
+            <div class="image-row">
+                <img src="image/facebook.png" alt="Image 1">
+                <img src="image/twitter.png" alt="Image 2">
+                <img src="image/instagram.png" alt="Image 3">
+                <img src="image/youtube.png" alt="Image 4">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom div with copyright text -->
+    <div class="bottom-div">
+        <p>Copyright &copy; 2023 <span class="logo">LOGO</span></p>
+    </div>
+	
+	<script>
+	 let isCounting = false; // Variable to track if countdown is active
+
+        function startCountdown(button) {
+            if (!isCounting) {
+                isCounting = true;
+                button.disabled = true; // Disable the clicked button
+                const playText = button.nextElementSibling;
+                let remainingTime = parseInt(playText.textContent); // Get initial time from play-text, default to 25
+
+                const countdownInterval = setInterval(function () {
+                    if (remainingTime > 0) {
+                        remainingTime--;
+                        playText.textContent = remainingTime + ' sec';
+                    } else {
+                        clearInterval(countdownInterval);
+                        isCounting = false;
+                        button.disabled = false; // Re-enable the button
+						button.classList.add('hidden');
+                        playText.textContent = 'Completed';
+                    }
+                }, 1000);
+
+                // Change symbol to pause when countdown starts
+                button.classList.add('hidden');
+            }
+        }
+	</script>
+	
+	
+</body>
+</html>
