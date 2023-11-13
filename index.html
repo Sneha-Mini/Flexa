@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            background-color: #FFFFFF;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Define header styles */
+        header {
+            background-color: #C4C8FC;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Style the logo image */
+        .headerlogo {
+            max-width: 150px; /* Adjust the width as needed */
+            height: auto;
+        }
+
+        /* Style the text on the right side */
+        .header-text {
+            text-align: right;
+        }
+
+        /* Style the anchor tags (links) */
+        .header-text a {
+            color: black; /* Set text color to black */
+            text-decoration: none; /* Remove underlines */
+            margin-right: 20px; /* Adjust the margin as needed */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        /* Responsive header */
+        @media (max-width: 768px) {
+            .header-text {
+                display: none;
+                flex-direction: column;
+                align-items: flex-end;
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                background-color: #C4C8FC;
+                padding: 10px;
+            }
+            
+            .header.show-dropdown .header-text {
+                display: flex;
+            }
+
+            .header.show-dropdown .header-text a {
+                margin: 10px 0;
+            }
+        }
+
+        /* Toggle button for responsive menu */
+        .menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+            }
+        }
+		
+		/* CSS for the sections */
+        .section {
+            padding: 10px;
+        }
+
+        /* CSS for the columns */
+        .section-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .left-column {
+            flex: 1;
+            padding: 20px;
+            text-align: left; /* Center text in the left column */
+        }
+
+        .right-column {
+            flex: 1;
+            padding: 20px;
+            text-align: left; /* Center the image in the right column */
+        }
+
+        /* CSS for text and button in the left column */
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #5F5BFF; /* Button background color */
+            color: white; /* Button text color */
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: left;
+        }
+
+        button:hover {
+            background-color: #4c49d1; /* Button background color on hover */
+        }
+
+        /* CSS for the image in the right column */
+        .right-column img {
+            max-width: 100%;
+            height: auto;
+        }
+		.left-column img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+
+            h2 {
+                font-size: 20px; /* Slightly reduce font size for headings */
+            }
+
+            p {
+                font-size: 14px; /* Slightly reduce font size for paragraphs */
+            }
+
+            button {
+                font-size: 14px; /* Slightly reduce font size for button text */
+            }
+        }
+		/* CSS for the Fitness Potential section */
+		#fitness-potential-section {
+			padding: 40px 200px;
+		}
+
+		/* CSS for the heading */
+		#fitness-potential-section h2 {
+			font-size: 26px;
+			font-weight: bold;
+			margin-bottom: 40px;
+			text-align: center;
+		}
+
+		/* CSS for the rows and columns */
+		.row {
+			display: flex;
+			flex-wrap: wrap; /* Ensure columns wrap to the next row on smaller screens */
+			margin-top: 20px;
+		}
+		.row h3{
+			text-align: center;
+		}
+
+		.col-4 {
+			flex: 0 0 100%; /* Full width on small screens, stacking divs */
+			margin-bottom: 20px; /* Add margin at the bottom of each div */
+		}
+				/* Responsive adjustments */
+		@media (min-width: 768px) {
+			.col-4 {
+				flex: 0 0 calc(33.33% - 20px); /* Adjust width and margin as needed */
+				margin-right: 20px; /* Add margin between divs */
+			}
+
+			.col-4:last-child {
+				margin-right: 0; /* Remove margin from the last column in each row */
+			}
+		}
+
+		/* CSS for alternating colors */
+		.color-1 {
+			background-color: #5F5BFF;
+			padding: 20px;
+			color: white;
+			border-radius: 5px;
+		}
+
+		.color-2 {
+			background-color: #C4C8FC;
+			padding: 20px;
+			color: black;
+			border-radius: 5px;
+		}
+
+		/* CSS for headings and paragraphs inside the divs */
+		.color-1 h3,
+		.color-2 h3 {
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.color-1 p,
+		.color-2 p {
+			font-size: 16px;
+		}
+		@media (max-width: 768px) {
+          #fitness-potential-section {
+			padding: 40px;
+		  }  
+        }
+		
+
+
+        /* Footer styles */
+        footer {
+            background-color: #C4C8FC;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Style the logo image in the footer */
+        .logo {
+            max-width: 200px; /* Adjust the width as needed */
+            height: auto;
+        }
+
+        /* Style the text below the logo in the footer */
+         .footer-text {
+            max-width: 800px;
+        }
+
+        /* Style the row of images in the footer */
+        .image-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-row img {
+            max-width: 24px; /* Adjust the image size as needed */
+            margin: 10px 10px; /* Adjust the margin between images */
+        }
+
+        /* Style the bottom div with copyright text in the footer */
+        .bottom-div {
+            background-color: #5F5BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Logo image on the left side -->
+        <img src="image/logo.png" alt="Logo" class="headerlogo">
+        
+        <!-- Responsive menu toggle button -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        
+        <!-- Text on the right side with links to respective sections -->
+        <div class="header-text">
+            <a href="#bmi-section">BMI</a>
+            <a href="#lose-weight-section">Lose weight</a>
+            <a href="#gain-weight-section">Gain weight</a>
+        </div>
+    </header>
+
+    <!-- The rest of your website content goes here -->
+
+    <!-- BMI section -->
+    <section id="bmi-section" class="section">
+        <div class="section-content">
+            <!-- Left column with text and button -->
+            <div class="left-column">
+                <h2>Discover Your BMI & Personalized Workouts</h2>
+                <p>Calculate your BMI and access customized workouts to achieve your fitness goals. Tailored exercise plans for a healthier you, all in one place.</p>
+                <button class="start-workout-button">Start Workout &rarr;</button>
+            </div>
+
+            <!-- Right column with an image -->
+            <div class="right-column">
+                <img src="image/bmi_sec.png" alt="BMI Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lose Weight section -->
+    <section id="lose-weight-section" class="section" style="background-color: #C4C8FC;">
+        <div class="section-content">
+            <!-- Left column with an image -->
+            <div class="left-column">
+                <img src="image/lose_sec.png" alt="Lose Weight Image">
+            </div>
+
+            <!-- Right column with text and button -->
+            <div class="right-column">
+                <h2>Lose Weight Smartly</h2>
+                <p>Our platform offers personalized workout plans designed specifically for weight loss. Tailored exercises and routines to help you reach your ideal weight safely and effectively.</p>
+                <button class="lose-now-button">Lose Now &rarr;</button>
+            </div>
+        </div>
+    </section>
+	
+	
+
+    <!-- Gain Weight section -->
+    <section id="gain-weight-section" class="section">
+        <div class="section-content">
+            <!-- Left column with text and button -->
+            <div class="left-column">
+                <h2>Gain Weight Strategically</h2>
+                <p>Explore our custom workout plans for healthy weight gain. Targeted exercises and routines to help you achieve your desired physique safely and effectively.</p>
+                <button class="start-gaining-button">Start Gaining &rarr;</button>
+            </div>
+
+            <!-- Right column with an image -->
+            <div class="right-column">
+                <img src="image/gain_sec.png" alt="Gain Weight Image">
+            </div>
+        </div>
+    </section>
+	
+	<!-- Below the Gain Weight section -->
+	<section id="fitness-potential-section" class="section">
+		<h2>Unlock Your Fitness Potential</h2>
+		<div class="row">
+			<!-- 1st Row Divs -->
+			<div class="col-4">
+				<div class="color-1">
+					<h3>Tailored Exercises</h3>
+					<p>Receive exercise routines tailored to your BMI and goals, ensuring efficient progress.</p>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="color-2">
+					<h3>Achieve Balance</h3>
+					<p>Maintain a healthy weight while gaining muscle or losing fat with our guidance.</p>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="color-1">
+					<h3>Health Insights</h3>
+					<p>Calculate and track your BMI for a better understanding of your fitness journey.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<!-- 2nd Row Divs -->
+			<div class="col-4">
+				<div class="color-2">
+					<h3>Optimal Results</h3>
+					<p>Unlock your potential and achieve the best results with our expert-designed, tailored workout plans.</p>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="color-1">
+					<h3>Safe Progress</h3>
+					<p>Prioritize safe progress with expert-designed workouts, minimizing injury risk for a successful fitness journey.</p>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="color-2">
+					<h3>Convenience</h3>
+					<p>Access your fitness plans and BMI calculator anytime, anywhere for a seamless experience.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+ 
+    <footer>
+        <div class="footer-content">
+            <!-- Top div with content -->
+            <img src="image/logo.png" alt="Logo" class="logo">
+            <div class="footer-text">
+                <p>Discover tailored workouts for your fitness goals. Whether you aim to shed pounds or gain muscle, our BMI-based recommendations guide your journey to a healthier you.</p>
+            </div>
+            <div class="image-row">
+                <img src="image/facebook.png" alt="Image 1">
+                <img src="image/twitter.png" alt="Image 2">
+                <img src="image/instagram.png" alt="Image 3">
+                <img src="image/youtube.png" alt="Image 4">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom div with copyright text -->
+    <div class="bottom-div">
+        <p>Copyright &copy; 2023 <span class="logo">LOGO</span></p>
+    </div>
+	
+	 <script>
+        function toggleMenu() {
+            const header = document.querySelector('.header');
+            header.classList.toggle('show-dropdown');
+        }
+		function redirectToPage(pageName) {
+			window.location.href = pageName;
+		}
+
+		// Add event listeners to the buttons
+		document.querySelector(".start-workout-button").addEventListener("click", function () {
+			redirectToPage("bmi.html");
+		});
+
+		document.querySelector(".lose-now-button").addEventListener("click", function () {
+			redirectToPage("Overweight.html");
+		});
+
+		document.querySelector(".start-gaining-button").addEventListener("click", function () {
+			redirectToPage("Underweight.html");
+		});
+    </script>
+	
+</body>
+</html>
