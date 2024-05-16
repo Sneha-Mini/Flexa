@@ -1,0 +1,41 @@
+.center {
+    text-align: center;
+  }
+  
+  .center-paragraph{
+    font-size: 24px;
+    color: #F78561;
+    margin: 0px;
+  }
+  .center-heading {
+    font-size: 40px;
+    margin: 0px;
+  }
+  
+  .center-description {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .center {
+        display: block;
+        padding: 20px;
+        margin: 0px;
+      }
+    .center-paragraph {
+        font-size: 12px;
+        color: #F78561;
+        margin: 0px;
+      }
+      
+      .center-heading {
+        font-size: 20px;
+        margin: 0px;
+      }
+      
+      .center-description {
+        font-size: 10px;
+        margin-bottom: 20px;
+      }
+  }

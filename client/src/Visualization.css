@@ -1,0 +1,39 @@
+.visualization-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow elements to wrap to the next line */
+    justify-content: center;
+    margin: 30px 70px;
+
+}
+
+.visualization-left, .visualization-right, .visualization-matrix {
+    flex-basis: calc(50% - 10px); /* Set the width to 50% with some spacing */
+    margin-bottom: 20px; /* Add spacing between sections */
+}
+
+.visualization-matrix {
+    overflow: auto;
+}
+
+.visualization-left h2, .visualization-right h2, .visualization-matrix h2 {
+    margin-bottom: 10px;
+}
+
+.visualization-matrix table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.visualization-matrix th, .visualization-matrix td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.visualization-matrix th {
+    background-color: #f2f2f2;
+}
+
+
+  
+  

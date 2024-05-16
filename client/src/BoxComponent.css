@@ -1,0 +1,77 @@
+.box {
+    display: inline-block;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid #7342DC;
+    padding: 20px;
+  }
+  
+  .box-image {
+    width: 70px;
+    height: 70px;
+    background-color: #7342DC;
+    background-size: 80%; 
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .boxcontent {
+    text-align: center;
+  }
+  
+  .boxheading {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .box-description {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  .start-workout-button {
+    background-color: #7342DC;
+    border: 2px solid #7342DC;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .start-workout-button:hover {
+    background-color: transparent;
+    color: #7342DC;
+    border: 2px solid #7342DC;
+  }
+
+  @media screen and (max-width: 768px) {
+      .box {
+        width: 200px;
+        margin-top: 0px 20px;
+        margin-bottom: 20px;
+      }
+      .box-image {
+        width: 35px;
+        height: 35px;
+        background-color: #7342DC;
+        background-size: 80%; 
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .boxheading {
+        font-size: 20px;
+        margin: 0px;
+      }
+      
+      .box-description {
+        font-size: 10px;
+        margin-bottom: 20px;
+      }
+      .start-workout-button {
+        font-size: 10px;
+        margin-top: 0px;
+      }
+  }
+  

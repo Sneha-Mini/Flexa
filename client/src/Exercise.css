@@ -1,0 +1,20 @@
+.exercise-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px 40px 40px;
+    margin: 30px 70px;
+    gap: 30px; 
+  }
+  
+ 
+  @media screen and (max-width: 768px) {
+    .exercise-container {
+        display: block;
+        padding: 0px 40px;
+        margin: 0;
+    }
+    
+  }
+  

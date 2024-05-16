@@ -1,0 +1,122 @@
+.contact-container {
+    background-color: #7342DC;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 40px ;
+    
+  }
+  .center {
+    text-align: center;
+  }
+  .anchor-spacer::before {
+    content: "";
+    display: block;
+    height: 60px;
+    margin-top: -60px; 
+    visibility: hidden;
+  }
+  .email {
+    text-align: center;
+  }
+  
+  .contact-paragraph{
+    font-size: 24px;
+    color: #F78561;
+    margin: 0px;
+  }
+  .contact-heading {
+    font-size: 40px;
+    margin: 0px;
+    color: #ffffff;
+  }
+  
+  .contact-description {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+    .email .input-field,
+    .email .submit-button {
+        display: inline-block;
+        padding: 10px 15px;
+        font-size: 20px;
+        border-radius: 0px;
+        width: auto;
+        -webkit-appearance: none;
+        margin: 30px 0px;
+    }
+    .email .input-field::placeholder {
+    color: #ffffff; /* Change the placeholder color */
+    }
+    .email .input-field {
+    border: 2px solid #F78561;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  .email .submit-button {
+    background-color: #F78561;
+    border: 2px solid #F78561;
+    color: #ffffff;
+    padding: 10px ;
+    cursor: pointer;
+  }
+  
+  .email .submit-button:hover {
+    background-color: transparent;
+    border: 2px solid #F78561;
+  }
+  .message{
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  @media screen and (max-width: 768px) {
+    .contact-container {
+        display: block;
+        padding: 0px 40px;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+    .message{
+      font-size: 10px;
+      color: #ffffff;
+    }
+    .center {
+        display: block;
+        padding: 20px;
+        margin: 0px;
+      }
+    .contact-paragraph {
+        font-size: 12px;
+        color: #F78561;
+        margin: 0px;
+      }
+      
+      .contact-heading {
+        font-size: 20px;
+        margin: 0px;
+      }
+      
+      .contact-description {
+        font-size: 10px;
+        margin-bottom: 0px;
+      }
+      .email .input-field,
+      .email  .submit-button {
+        display: inline-block;
+        padding: 5px 7.5px;
+        font-size: 10px;
+        border-radius: 0px;
+        width: auto;
+        -webkit-appearance: none;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+    }
+    
+  }
+  

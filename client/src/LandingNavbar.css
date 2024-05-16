@@ -1,0 +1,132 @@
+.landing-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .landing-logo {
+    font-size: 40px;
+    margin-left: 20px;
+  }
+  
+  .landing-nav-links ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .landing-nav-links ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .landing-nav-links ul li:last-child {
+    margin-right: 50px;
+  }
+  
+  .landing-nav-links li a {
+    color: #000;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 40px; 
+  }
+  
+  .landing-nav-links .atag::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; 
+    left: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: #7342DC; 
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+  }
+  
+  .landing-nav-links .atag:hover::after {
+    transform: scaleX(1); 
+  }
+  
+  .landing-profile {
+    position: relative;
+  }
+  .landing-profile img {
+    width: 40px;
+    height: 40px;
+  }
+  .landing-profile button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .landing-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px); 
+    left: 50%; 
+    transform: translateX(-80%); 
+    z-index: 1000;
+    width: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  
+  .landing-dropdown-menu {
+    display: block;
+  }
+  
+  .landing-dropdown-menu div {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .landing-dropdown-menu div :hover{
+    cursor: pointer;
+    color: #F78561;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .landing-logo-container span {
+      font-size: 20px;
+      margin-left: 0px;
+    }
+    .landing-nav-links li a {
+        color: #000;
+        font-size: 14px;
+        position: relative;
+        text-decoration: none;
+        margin-right: 10px; 
+    }
+    .landing-nav-links ul li:last-child {
+        margin-right: 30px;
+      }
+    .landing-profile img {
+        width: 20px;
+        height: 20px;
+    }
+    .landing-dropdown-menu div {
+        padding: 5px;
+        font-size: 12px;
+        
+    }
+    .landing-dropdown-menu {
+        z-index: 1000;
+        transform: translateX(-90%); 
+        width: auto;
+      }
+     
+  }

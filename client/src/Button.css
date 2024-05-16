@@ -1,0 +1,23 @@
+.custom-button {
+    background-color: #7342DC;
+    border: 2px solid #7342DC;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .custom-button:hover {
+    background-color: #F78561;
+  color: #ffffff;
+  border: 2px solid #F78561;
+  }
+
+  @media screen and (max-width: 768px) {
+    .custom-button {
+      font-size: 10px;
+    }
+      
+  }
+  

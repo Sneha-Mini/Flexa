@@ -1,0 +1,93 @@
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+  }
+  
+  .left-column1 {
+    width: 350px;
+    margin: 0px 250px;
+  }
+  
+  .get-started-heading {
+    font-size: 30px;
+  }
+  .flexa{
+    font-size: 40px;
+    color: #F78561;
+  }
+  .credentials-text {
+    font-size: 20px;
+  }
+  .error-message{
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: red;
+}
+  label {
+    font-size: 16px;
+  }
+  
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  .signup-text {
+    font-size: 14px;
+  }
+  
+  .right-column1 {
+    flex: 1;
+  }
+  .login-image {
+    width: 100%; /* Set the width of the image to cover the entire parent container */
+    height: 100vh; /* Set the height of the image to cover the entire parent container */
+    object-fit: cover; /* Ensure the image covers the entire space without distortion */
+  }
+  
+  @media (max-width: 768px) {
+    .right-column {
+      display: none;
+    }
+    .flexa{
+      font-size: 30px
+    }
+  .left-column1 {
+    width: 100;
+    margin: 0px 20px;
+  }
+  
+  .get-started-heading {
+    font-size: 26px;
+  }
+  .error-message{
+    font-size: 10px;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    color: red;
+}
+  .credentials-text {
+    font-size: 16px;
+  }
+  
+  label {
+    font-size: 14px;
+  }
+  
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  .signup-text {
+    font-size: 14px;
+  }
+  
+  }
+  
